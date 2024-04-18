@@ -80,6 +80,33 @@ body {
    width: 340px;
 }
 
+.banner .container .cadastro .box .input_duplo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.banner .container .cadastro .box .input_duplo div {
+    display: flex;
+    flex-direction: column;
+}
+.banner .container .cadastro .box .input_duplo .input_maior {
+    width: 73%;
+}
+
+.banner .container .cadastro .box .input_duplo .input_menor {
+    width:25%;
+}
+
+
+.banner .container .cadastro .box input{
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+
 .banner .container h1 {
     font-family: "Hind Madurai", sans-serif;
     font-weight: 600;

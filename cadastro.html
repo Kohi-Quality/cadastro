@@ -29,22 +29,50 @@
         <div class="container">
             <h1>Cadastro</h1>
             <div class="cadastro">
-                
-                <div class="box">
-                    
-                    <p>Email *</p> <input type="text" placeholder="exemplo@exemplo.com.br">
-                    <p>Senha *</p> <input type="password" placeholder="*****">
-                    <p>Confirmar senha *</p> <input type="password" placeholder="*****">
-                </div>
 
                 <div class="box">
-                    <p>Endereço *</p> <input type="text" placeholder="Nome da rua aqui">
-                    <p>CNPJ *</p> <input type="text" placeholder="Insira seu CNPJ">
-                    <p>Número de telefone *</p> <input type="text" placeholder="Número de telefone">
+                    <p>Nome Completo: *</p> <input type="text" placeholder="Nome Completo" id="input_nomeCompleto">
+                    <p>CNPJ *</p> <input type="number" placeholder="Insira seu CNPJ">
+
+
+                    <div class="input_duplo">
+                        <div class="input_maior">
+                            <p>Logradouro *</p> <input type="text" placeholder="Nome da rua aqui">
+                        </div>
+
+                        <div class="input_menor">
+                            <p>Número</p> <input type="text" placeholder="N°">
+                        </div>
+                    </div>
+
+                    <div>
+                        <p>Complemento</p> <input type="text" placeholder="Compl.">
+                    </div>
+
+
+                    <div class="input_duplo">
+                        <div class="input_maior">
+                            <p>Bairro</p> <input type="text" placeholder="Bairro">
+                        </div>
+
+                        <div class="input_menor">
+                            <p>Estado</p> <input type="text" placeholder="Estado">
+                        </div>
+
+                    </div>
+
+
+                  
                 </div>
-               
+                <div class="box">
+                    <p>Número de telefone *</p> <input type="text" placeholder="Número de telefone">
+                    <p>Email: *</p> <input type="text" placeholder="exemplo@exemplo.com.br" id="input_Email">
+                    <p>Senha: *</p> <input type="password" placeholder="*****" id="input_Senha">
+                    <p>Confirmar senha: *</p> <input type="password" placeholder="*****" id="input_ConfirmarSenha">
+                </div>
+
             </div>
-            <button>Entrar</button>
+            <button onclick="cadastrar()">Cadastrar</button>
         </div>
 
     </div>
@@ -53,4 +81,3 @@
 </body>
 
 </html>
-
