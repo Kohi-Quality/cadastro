@@ -4,24 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/LogoKohiPronto.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Kohi Quality-Cadastro</title>
 </head>
 
 <body>
+   
     <div class="header">
+        <div class="logo"><img src="./assets/LogoKohiPronto.png" alt="logotipo"></div>
         <div class="container">
-            <div class="logo">
-                <img src="./assets/!LOGO FINAL menor.png">
+            <div class="navbar">
+                <a href="">Home</a>
+                <a href="">Sobre</a>
+                <a href="">Feedbacks</a>
+                <a href="">Simule</a>
+                <a href="">Contato</a>
+                <a href="">Dashboard</a>
             </div>
-            <ul class="navbar">
-                <li>Home</li>
-                <li>Sobre</li>
-                <li>Feedbacks</li>
-                <li>Simule</li>
-                <li>Contato</li>
-                <li><button>Login</button></li>
-            </ul>
         </div>
     </div>
 
@@ -32,31 +32,31 @@
 
                 <div class="box">
                     <p>Nome Completo: *</p> <input type="text" placeholder="Nome Completo" id="input_nomeCompleto">
-                    <p>CPF *</p> <input type="number" placeholder="Insira seu CPF">
+                    <p>CPF *</p> <input type="number" placeholder="Insira seu CPF" id="input_cpf">
 
 
                     <div class="input_duplo">
                         <div class="input_maior">
-                            <p>Logradouro *</p> <input type="text" placeholder="Nome da rua aqui">
+                            <p>Logradouro *</p> <input type="text" placeholder="Nome da rua" id="input_logradouro">
                         </div>
 
                         <div class="input_menor">
-                            <p>Número</p> <input type="text" placeholder="N°">
+                            <p>Número *</p> <input type="text" placeholder="N°" id="input_numero">
                         </div>
                     </div>
 
                     <div>
-                        <p>Complemento</p> <input type="text" placeholder="Compl.">
+                        <p>Complemento</p> <input type="text" placeholder="Compl." id="input_complemento">
                     </div>
 
 
                     <div class="input_duplo">
                         <div class="input_maior">
-                            <p>Bairro</p> <input type="text" placeholder="Bairro">
+                            <p>Bairro *</p> <input type="text" placeholder="Bairro" id="input_bairro">
                         </div>
 
                         <div class="input_menor">
-                            <p>Estado</p> <input type="text" placeholder="Estado">
+                            <p>Estado *</p> <input type="text" placeholder="Estado" id="input_estado">
                         </div>
 
                     </div>
@@ -65,14 +65,15 @@
                   
                 </div>
                 <div class="box">
-                    <p>Número de telefone *</p> <input type="text" placeholder="Número de telefone">
+                    <p>Número de telefone *</p> <input type="text" placeholder="Número de telefone" id="input_numTelefone">
                     <p>Email: *</p> <input type="text" placeholder="exemplo@exemplo.com.br" id="input_Email">
                     <p>Senha: *</p> <input type="password" placeholder="*****" id="input_Senha">
                     <p>Confirmar senha: *</p> <input type="password" placeholder="*****" id="input_ConfirmarSenha">
                 </div>
-
+                
             </div>
-            <button onclick="cadastrar()">Cadastrar</button>
+            <a href="./login.html"> <button onclick="cadastrar()">Cadastrar</button></a>
+            <div id="div_mensagem" class="mensagem"></div>
         </div>
 
     </div>
@@ -81,3 +82,26 @@
 </body>
 
 </html>
+
+<script>
+    function cadastrar(){
+        div_mensagem.innerHTML = ""
+        
+        var nome_completo = input_nomeCompleto.value;
+        var cpf = Number(input_cpf.value);
+        var logradouro = input_logradouro.value;
+        var numero = Number(input_numero.value);
+        var complemento = input_complemento.value;
+        var bairro = input_bairro.value;
+        var estado = input_estado.value;
+        var numTelefone = Number(input_numTelefone.value);
+        var email = input_Email.value;
+        var senha = input_Senha.value;
+        var confirmarSenha = input_ConfirmarSenha;
+
+        if(nome_completo == "" || cpf == "" || logradouro == "" || numero == "" || complemento == "" || bairro == "" || estado == "" || numTelefone == "" || email == "" || senha == "" || confirmarSenha == "" ){
+            div_mensagem.innerHTML = `Por favor, preencha todos os campos obrigatórios (*) para se cadastrar como cliente`
+        }
+        if(senha.leg)
+    }
+</script>
