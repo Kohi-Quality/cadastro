@@ -6,11 +6,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
 .header{
     width: 100%;
     height: 100px;
@@ -60,16 +55,17 @@ body {
 
 .banner .container{
     width: 100%;
-    height: 900px;
+    height: 100vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
     justify-content: center;
     align-items: center;
     background-image: url("./assets/jo-lanta-68KjM0kfsVo-unsplash.jpg");
 }
+
 .form{
-    width: 55%;
-    height: 700px;
+    width: 40%;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,9 +75,11 @@ body {
     border-radius: 5px;
     margin-bottom: 50px;
 }
+
 .form-header{
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     display: flex;
+    justify-content: space-between;
 }
 
 .form-header h1::after{
@@ -96,38 +94,42 @@ body {
 }
 
 .input-group{
-    width: 95%;
-    height: 200px;
+    height: 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
 }
 
 .input-box{
     display: flex;
     flex-direction: column;
+    margin-bottom: 1.1rem;
 }
-
 .input-box input{
-    margin: 0.9rem 0;
-    padding: 0.6rem 1.2rem;
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
 }
+
+.input-box input:hover{
+    background-color: #eeeeee75;
+}
+.input-box input:focus-visible{
+    outline: 1px solid #B7966B;
+}
+
 .input-box label{
     font-size: 0.75rem;
     font-weight: 600;
     color: #000000c0;
 }
 
-.input-box select{
-    margin: 0.6rem 0;
-    padding: 0.6rem 1.0rem;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c; 
+.input-box input::placeholder{
+    color: #000000be;
+
 }
 
 
@@ -138,9 +140,8 @@ body {
     padding: 0.62rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 350px;
+    margin-top: 150px;
 }
-
 .continue-button button:hover{
     background-color: #36561E;
 }
@@ -151,12 +152,3 @@ body {
     font-weight: 500;
     color: #fff;
 }
-
-
-
-
-
-
-
-
-
