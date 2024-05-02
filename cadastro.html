@@ -63,7 +63,7 @@
 
                         <div class="input-box">
                             <label for="confirmarSenha">Confirmar Senha: *</label>
-                            <input type="text" id="input_ConfirmarSenha" placeholder="Confirmar sua senha">
+                            <input type="password" id="input_ConfirmarSenha" placeholder="Confirmar sua senha">
                         </div>
 
                     </div>
@@ -126,7 +126,7 @@
 
                 </div>
                 <div class="continue-button">
-                    <button onclick="cadastrar()"><a href="#">Cadastrar</a></button>
+                    <button onclick="cadastrar()"><a href="login.html">Cadastrar</a></button>
                 </div>
                 <div class="div_mensagem" id="div_mensagem">
 
@@ -151,34 +151,49 @@
         var numero = Number(input_numero.value);
         var complemento = input_complemento.value;
         var bairro = input_bairro.value;
-        var estado = input_estado.value;
+        var estado = select_estado.value;
         var numTelefone = Number(input_numTelefone.value);
         var email = input_email.value;
-        var senha = input_Senha.value;
+        var senha = input_senha.value;
         var confirmarSenha = input_ConfirmarSenha.value;
 
         if (nome_completo == "" || cpf == "" || logradouro == "" || numero == "" || complemento == "" || bairro == "" || estado == "" || numTelefone == "" || email == "" || senha == "" || confirmarSenha == "") {
             div_mensagem.innerHTML += `Por favor, preencha todos os campos obrigatórios (*) para se cadastrar como cliente<br>`
         }
+        if(senha != confirmarSenha){
+            div_mensagem.innerHTML += `Senhas diferentes`
+        }
+        else{
+            window.location.href = "login.html"
+        }
         if (senha.legth < 8) {
             div_mensagem.innerHTML += `Senha inválida<br>`
+        } else {
+            window.location.href = "login.html"
         }
         var caracteresEspeciais = "!@#$%^&*()-+";
 
         for (var especias = 0; especiais < senha.length; especiais++) {
             if (caracteresEspeciais.indexOf(senha[especias]) !== -1) {
-                return true;
+                window.location.href = "login.html"
+            }
+            else{
+                div_mensagem.innerHTML +=`Coloque pelo menos 1 caracter especial`
             }
         }
 
-        return false;
-    }
+        
 
-
-    var indice_arroba = email.indexOf("@");
+        var email = input_email.value;
+         var indice_arroba = email.indexOf("@");
 
     if (indice_arroba < 0) {
         div_mensagem.innerHTML += `Email inválido<br>`
+    } else{
+        window.location.href = "login.html"
     }
+    }
+
+   
 
 </script>
