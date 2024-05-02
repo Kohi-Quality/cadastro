@@ -91,7 +91,7 @@
 
                         <div class="input-box">
                             <label for="estado">Estado: *</label>
-                            <select name="estado">
+                            <select name="estado" id="select_estado">
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
                                 <option value="AP">Amapá</option>
@@ -126,7 +126,10 @@
 
                 </div>
                 <div class="continue-button">
-                    <button><a href="#">Cadastrar</a></button>
+                    <button onclick="cadastrar()"><a href="#">Cadastrar</a></button>
+                </div>
+                <div class="div_mensagem" id="div_mensagem">
+
                 </div>
 
             </div>
@@ -150,9 +153,9 @@
         var bairro = input_bairro.value;
         var estado = input_estado.value;
         var numTelefone = Number(input_numTelefone.value);
-        var email = input_Email.value;
+        var email = input_email.value;
         var senha = input_Senha.value;
-        var confirmarSenha = input_ConfirmarSenha;
+        var confirmarSenha = input_ConfirmarSenha.value;
 
         if (nome_completo == "" || cpf == "" || logradouro == "" || numero == "" || complemento == "" || bairro == "" || estado == "" || numTelefone == "" || email == "" || senha == "" || confirmarSenha == "") {
             div_mensagem.innerHTML += `Por favor, preencha todos os campos obrigatórios (*) para se cadastrar como cliente<br>`
