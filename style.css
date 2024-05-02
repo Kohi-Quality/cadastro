@@ -116,7 +116,7 @@ body {
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
 }
-.input-box label{
+.input-box p{
     font-size: 0.75rem;
     font-weight: 600;
     color: #000000c0;

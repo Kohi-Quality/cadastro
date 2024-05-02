@@ -37,32 +37,32 @@
                 <div class="input-group">
                     <div class="input-subgroup">
                         <div class="input-box">
-                            <label for="nome_completo">Nome Completo: *</label>
+                            <p>Nome Completo: *</p>
                             <input type="text" id="input_nomeCompleto" placeholder="Digite seu nome completo">
                         </div>
 
                         <div class="input-box">
-                            <label for="cpf">CPF: *</label>
+                            <p>CPF: *</p>
                             <input type="text" id="input_cpf" placeholder="Ex.: 000.000.000-00">
                         </div>
 
                         <div class="input-box">
-                            <label for="numTelefone">Número de telefone: *</label>
+                            <p>Número de telefone: *</p>
                             <input type="text" id="input_numTelefone" placeholder="Ex.: (00) 0000-0000">
                         </div>
 
                         <div class="input-box">
-                            <label for="email">Email: *</label>
+                            <p>Email: *</p>
                             <input type="email" id="input_email" placeholder="Digite seu email">
                         </div>
 
                         <div class="input-box">
-                            <label for="senha">Senha: *</label>
+                            <p>Senha: *</p>
                             <input type="password" id="input_senha" placeholder="Crie uma senha">
                         </div>
 
                         <div class="input-box">
-                            <label for="confirmarSenha">Confirmar Senha: *</label>
+                            <p>Confirmar Senha: *</p>
                             <input type="password" id="input_ConfirmarSenha" placeholder="Confirmar sua senha">
                         </div>
 
@@ -70,27 +70,27 @@
                     <div class="input-subgroup">
 
                         <div class="input-box">
-                            <label for="logradouro">Logradouro: *</label>
+                            <p>Logradouro: *</p>
                             <input type="text" id="input_logradouro" placeholder="Digite o nome da rua">
                         </div>
 
                         <div class="input-box">
-                                <label for="numero">Número: *</label>
+                                <p>Número: *</p>
                                 <input type="text" id="input_numero" placeholder="N°">
                         </div>
 
                         <div class="input-box">
-                            <label for="complemento">Complemento: </label>
+                            <p>Complemento: </p>
                             <input type="text" id="input_complemento" placeholder="Complemento(opcional)">
                         </div>
 
                         <div class="input-box">
-                            <label for="Bairro">Bairro: *</label>
+                            <p>Bairro: *</p>
                             <input type="text" id="input_bairro" placeholder="Digite o nome do bairro">
                         </div>
 
                         <div class="input-box">
-                            <label for="estado">Estado: *</label>
+                            <p>Estado: *</p>
                             <select name="estado" id="select_estado">
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
@@ -126,7 +126,7 @@
 
                 </div>
                 <div class="continue-button">
-                    <button onclick="cadastrar()"><a href="login.html">Cadastrar</a></button>
+                    <button onclick="cadastrar()">Cadastrar</button>
                 </div>
                 <div class="div_mensagem" id="div_mensagem">
 
@@ -158,40 +158,35 @@
         var confirmarSenha = input_ConfirmarSenha.value;
 
         if (nome_completo == "" || cpf == "" || logradouro == "" || numero == "" || complemento == "" || bairro == "" || estado == "" || numTelefone == "" || email == "" || senha == "" || confirmarSenha == "") {
-            div_mensagem.innerHTML += `Por favor, preencha todos os campos obrigatórios (*) para se cadastrar como cliente<br>`
-        }
-        if(senha != confirmarSenha){
-            div_mensagem.innerHTML += `Senhas diferentes`
-        }
-        else{
-            window.location.href = "login.html"
-        }
-        if (senha.legth < 8) {
-            div_mensagem.innerHTML += `Senha inválida<br>`
-        } else {
-            window.location.href = "login.html"
-        }
-        var caracteresEspeciais = "!@#$%^&*()-+";
-
-        for (var especias = 0; especiais < senha.length; especiais++) {
-            if (caracteresEspeciais.indexOf(senha[especias]) !== -1) {
-                window.location.href = "login.html"
-            }
-            else{
-                div_mensagem.innerHTML +=`Coloque pelo menos 1 caracter especial`
-            }
-        }
-
+        div_mensagem.innerHTML += `Por favor, preencha todos os campos obrigatórios (*) para se cadastrar como cliente<br>`;
+    } else if (senha !== confirmarSenha) {
+        div_mensagem.innerHTML += `Senhas diferentes<br>`;
+    } else if (senha.length < 8) {
+        div_mensagem.innerHTML += `A senha deve ter pelo menos 8 caracteres<br>`;
+    } else {
         
+        var caracteresEspeciais = "!@#$%^&*()-+";
+        var temCaracterEspecial = false;
 
-        var email = input_email.value;
-         var indice_arroba = email.indexOf("@");
+        for (var i = 0; i < senha.length; i++) {
+            if (caracteresEspeciais.indexOf(senha[i]) !== -1) {
+                temCaracterEspecial = true;
+                break;
+            }
+        }
 
-    if (indice_arroba < 0) {
-        div_mensagem.innerHTML += `Email inválido<br>`
-    } else{
-        window.location.href = "login.html"
-    }
+        if (!temCaracterEspecial) {
+            div_mensagem.innerHTML += `A senha deve conter pelo menos um caractere especial<br>`;
+        } else {
+            var indice_arroba = email.indexOf("@");
+
+            if (indice_arroba < 0) {
+                div_mensagem.innerHTML += `Email inválido<br>`;
+            } else {
+                window.location.href = "login.html";
+            }
+            }
+            }
     }
 
    
